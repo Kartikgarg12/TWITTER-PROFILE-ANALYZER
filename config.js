@@ -38,9 +38,9 @@ app.get("/submit", function(req, res) {
     var client = new Twitter({
       // CREDENTIALS
       consumer_key: "sTLsKLm41lQLXfmw4Muk3XW7y",
-      consumer_secret: "lInHoFlM4rcEzjpFwJZHo2b5umanclBO8YmqGnMCbspS0aVdwr",
-      access_token_key: "144873500-IWqjkOA5JhZEWZ0vyf6MKtjbwkrMtAgiCzKbc4k7",
-      access_token_secret: "UdEsGkK6VqCVnFtFKtwTL0gKZpHBSFyYs94Tj10rHp5fk"
+      consumer_secret: <<secret>>,
+      access_token_key: <<access token>>,
+      access_token_secret: <<access_token_secret>> 
     });
     var params = { screen_name: r };
     //var id = "1";
@@ -139,40 +139,7 @@ app.get("/submit", function(req, res) {
                 n.w = temp1["text"];
               }
             }
-            var rat;
-            if (n.d == 0) {
-              rat = 0;
-            } else if (n.d > 0 && n.d <= 10) {
-              rat = 1;
-            } else if (n.d > 10 && n.d <= 20) {
-              rat = 2;
-            } else if (n.d > 20 && n.d <= 30) {
-              rat = 3;
-            } else if (n.d > 30 && n.d <= 40) {
-              rat = 5;
-            } else if (n.d > 40 && n.d <= 50) {
-              rat = 7;
-            } else if (n.d >= 50 && n.d <= 100) {
-              rat = 10;
-            } else if (n.d > 100 && n.d <= 200) {
-              rat = 27;
-            } else if (n.d > 200 && n.d <= 300) {
-              rat = 36;
-            } else if (n.d > 300 && n.d <= 400) {
-              rat = 44;
-            } else if (n.d > 400 && n.d <= 500) {
-              rat = 55;
-            } else if (n.d > 500 && n.d <= 600) {
-              rat = 69;
-            } else if (n.d > 600 && n.d <= 700) {
-              rat = 75;
-            } else if (n.d > 700 && n.d <= 800) {
-              rat = 84;
-            } else if (n.d > 800 && n.d <= 1000) {
-              rat = 90;
-            } else if (n.d > 1000) {
-              rat = 94;
-            }
+            
             n.x = rat;
             if (n.k == true) {
               res.render("protected");
